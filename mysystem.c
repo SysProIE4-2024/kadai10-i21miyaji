@@ -68,11 +68,19 @@ retval = 00007f00
 使い方 : ./mysysmain コマンド文字列
 % ./mysysmain              
 使い方 : ./mysysmain コマンド文字列
-% ./mysysmain "echo "aaa""    --他のコマンドも使ってみる
+% ./mysysmain "echo "aaa""    --他のコマンドも使ってみる    
 mysystem:
 aaa
 retval = 00000000
 system:
 aaa
 retval = 00000000
+% ./mysysmain "rmdir abc"     --コマンドがエラーを起こす時
+mysystem:
+rmdir: abc: No such file or directory
+retval = 00000100
+system:
+rmdir: abc: No such file or directory
+retval = 00000100
+
 */
